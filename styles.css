@@ -20,6 +20,7 @@ body {
   position: relative;
 }
 
+/* 🔥 BACKGROUND GLOBAL (FIXO E COMPATÍVEL) */
 body::before {
   content: "";
   position: fixed;
@@ -28,59 +29,10 @@ body::before {
   opacity: 0.7;
   pointer-events: none;
   z-index: -2;
-  background-attachment: fixed;
+  transform: translateZ(0); /* melhora renderização no iOS */
 }
 
-@media (max-width: 980px), (hover: none) and (pointer: coarse) {
-  body {
-    background: #090909 !important;
-  }
-  body::before {
-    display: block !important;
-    position: absolute;
-    background: url("IMG_0015.PNG") center center / cover no-repeat;
-    opacity: 0.5;
-    background-attachment: scroll;
-  }
-  body::after {
-    background: rgba(12, 12, 12, 0.78);
-  }
-}
-@media (max-width: 980px), (hover: none) and (pointer: coarse) {
-  body::before {
-    position: absolute;
-    background-attachment: scroll;
-    background-position: center top;
-    background-size: cover;
-    opacity: 0.6;
-  }
-  body::after {
-    background: rgba(12, 12, 12, 0.78);
-  }
-}
-
-
-@media (max-width: 980px) {
-  body::before {
-    background-position: center top;
-    background-size: cover;
-    opacity: 0.6;
-  }
-  body::after {
-    background: rgba(12, 12, 12, 0.78);
-  }
-}
-
-@media (max-width: 600px) {
-  body::before {
-    background-position: center top;
-    background-size: cover;
-    opacity: 0.5;
-  }
-  body::after {
-    background: rgba(12, 12, 12, 0.85);
-  }
-}
+/* 🔥 OVERLAY ESCURO */
 body::after {
   content: "";
   position: fixed;
@@ -90,21 +42,29 @@ body::after {
   z-index: -1;
 }
 
+/* 📱 CORREÇÃO DEFINITIVA PARA IOS */
+@media (hover: none) and (pointer: coarse) {
+  body::before {
+    position: absolute;
+    height: 100%;
+    min-height: 100vh;
+    background-position: center top;
+    background-size: cover;
+    opacity: 0.6;
+  }
+
+  body::after {
+    background: rgba(12, 12, 12, 0.78);
+  }
+}
+
+/* 📦 LAYOUT */
 .poster-container {
   display: grid;
   grid-template-columns: 160px 1fr;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-}
-
-.poster-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  pointer-events: none;
-  z-index: 0;
 }
 
 .poster-side,
@@ -135,6 +95,7 @@ body::after {
   padding: 32px 40px;
 }
 
+/* 🧠 HEADER */
 .poster-header {
   max-width: 720px;
   margin-bottom: 32px;
@@ -162,6 +123,7 @@ body::after {
   color: var(--muted);
 }
 
+/* 🔽 FILTRO */
 .filter-row {
   margin: 18px 0 28px;
   display: flex;
@@ -186,10 +148,6 @@ body::after {
   cursor: pointer;
 }
 
-.team-select-button .arrow {
-  font-size: 0.95rem;
-}
-
 .team-select-menu {
   position: absolute;
   top: 100%;
@@ -200,9 +158,7 @@ body::after {
   max-height: 320px;
   overflow-y: auto;
   background: rgba(15, 15, 15, 0.95);
-  border: 1px solid rgba(246, 201, 0, 0.24);
   border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
 }
 
 .team-select-menu.hidden {
@@ -214,68 +170,43 @@ body::after {
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  color: var(--text);
   cursor: pointer;
-  transition: background 0.2s ease;
 }
 
-.team-option:hover,
-.team-option.active {
+.team-option:hover {
   background: rgba(246, 201, 0, 0.14);
 }
 
 .team-option img {
   width: 28px;
   height: 20px;
-  object-fit: cover;
   border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.team-option span {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
+/* 📅 CATEGORIA */
 .poster-category {
   margin-bottom: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.02);
 }
 
 .poster-category-header {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
   padding: 22px 24px;
-  background: rgba(255, 208, 0, 0.315);
+  background: rgba(255, 208, 0, 0.25);
 }
 
 .poster-category-header h2 {
   margin: 0;
-  font-size: 1.35rem;
 }
 
-.poster-events {
-  display: grid;
-}
-
+/* ⚽ EVENTOS */
 .poster-event {
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 20px;
   align-items: center;
   padding: 20px 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.poster-event:first-of-type {
-  border-top: none;
 }
 
 .event-time {
@@ -289,7 +220,6 @@ body::after {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
-  font-size: 0.95rem;
 }
 
 .team-box {
@@ -301,53 +231,34 @@ body::after {
 .team-flag {
   width: 34px;
   height: 22px;
-  object-fit: cover;
   border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.team-box span {
-  font-weight: 700;
 }
 
 .poster-group {
-  display: inline-flex;
   margin-top: 10px;
   padding: 6px 12px;
   border-radius: 999px;
   background: rgba(246, 201, 0, 0.14);
-  color: var(--text);
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
 .vs {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 42px;
-  color: var(--panel);
-  font-size: 0.9rem;
   font-weight: 800;
+  color: var(--panel);
 }
 
+/* 📱 RESPONSIVO */
 @media (max-width: 980px) {
   .poster-container {
     grid-template-columns: 1fr;
   }
 
   .poster-side {
-    padding: 16px 24px;
     justify-content: flex-start;
   }
 
   .poster-side-label {
-    font-size: 2.6rem;
-    writing-mode: horizontal-tb;
-    text-orientation: initial;
-    transform: none;
-    display: inline-block;
+    font-size: 2.2rem;
   }
 }
 
@@ -360,11 +271,7 @@ body::after {
     grid-template-columns: 1fr;
   }
 
-  .event-time {
-    font-size: 1.1rem;
-  }
-
   .poster-header h1 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
   }
 }
