@@ -20,41 +20,34 @@ body {
   position: relative;
 }
 
-/* 🔥 BACKGROUND GLOBAL (FIXO E COMPATÍVEL) */
-body::before {
-  content: "";
+/* 🔥 BACKGROUND FIXO (FUNCIONA NO IOS) */
+.bg-fixed {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   background: url("IMG_0015.PNG") center center / cover no-repeat;
-  opacity: 0.7;
-  pointer-events: none;
   z-index: -2;
-  transform: translateZ(0); /* melhora renderização no iOS */
+  pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
-/* 🔥 OVERLAY ESCURO */
-body::after {
+/* 🌑 OVERLAY */
+.bg-fixed::after {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   background: rgba(12, 12, 12, 0.65);
-  pointer-events: none;
-  z-index: -1;
 }
 
-/* 📱 CORREÇÃO DEFINITIVA PARA IOS */
-@media (hover: none) and (pointer: coarse) {
-  body::before {
+/* 📱 FIX REAL PARA IOS */
+@supports (-webkit-touch-callout: none) {
+  .bg-fixed {
     position: absolute;
-    height: 100%;
-    min-height: 100vh;
+    height: 120vh;
     background-position: center top;
-    background-size: cover;
-    opacity: 0.6;
-  }
-
-  body::after {
-    background: rgba(12, 12, 12, 0.78);
   }
 }
 
@@ -95,7 +88,7 @@ body::after {
   padding: 32px 40px;
 }
 
-/* 🧠 HEADER */
+/* HEADER */
 .poster-header {
   max-width: 720px;
   margin-bottom: 32px;
@@ -123,7 +116,7 @@ body::after {
   color: var(--muted);
 }
 
-/* 🔽 FILTRO */
+/* FILTRO */
 .filter-row {
   margin: 18px 0 28px;
   display: flex;
@@ -183,7 +176,7 @@ body::after {
   border-radius: 3px;
 }
 
-/* 📅 CATEGORIA */
+/* CATEGORIA */
 .poster-category {
   margin-bottom: 28px;
   border-radius: 24px;
@@ -200,7 +193,7 @@ body::after {
   margin: 0;
 }
 
-/* ⚽ EVENTOS */
+/* EVENTOS */
 .poster-event {
   display: grid;
   grid-template-columns: 110px 1fr;
@@ -247,7 +240,7 @@ body::after {
   color: var(--panel);
 }
 
-/* 📱 RESPONSIVO */
+/* RESPONSIVO */
 @media (max-width: 980px) {
   .poster-container {
     grid-template-columns: 1fr;
