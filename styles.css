@@ -24,12 +24,33 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("background.png") center center / cover no-repeat fixed;
-  opacity: 0.8;
+  background: url("IMG_0015.PNG") center center / cover no-repeat fixed;
+  opacity: 0.7;
   pointer-events: none;
   z-index: -2;
 }
 
+@media (max-width: 980px) {
+  body::before {
+    background-position: center top;
+    background-size: cover;
+    opacity: 0.6;
+  }
+  body::after {
+    background: rgba(12, 12, 12, 0.78);
+  }
+}
+
+@media (max-width: 600px) {
+  body::before {
+    background-position: center top;
+    background-size: cover;
+    opacity: 0.5;
+  }
+  body::after {
+    background: rgba(12, 12, 12, 0.85);
+  }
+}
 body::after {
   content: "";
   position: fixed;
@@ -202,7 +223,7 @@ body::after {
   align-items: center;
   gap: 12px;
   padding: 22px 24px;
-  background: rgba(246, 201, 0, 0.12);
+  background: rgba(255, 208, 0, 0.315);
 }
 
 .poster-category-header h2 {
