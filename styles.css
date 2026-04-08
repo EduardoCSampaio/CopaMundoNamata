@@ -196,12 +196,15 @@ body {
   gap: 20px;
   align-items: center;
   padding: 20px 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12); /* borda leve e sutil */
+  border-radius: 16px; /* bordas arredondadas */
+  background: rgba(255, 255, 255, 0.03); /* fundo bem clarinho opcional */
+  transition: background 0.3s ease; /* suaviza efeito ao passar mouse */
 }
 
-.event-time {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--accent);
+.poster-event:hover {
+  background: rgba(255, 255, 255, 0.07); /* efeito hover suave */
 }
 
 .event-teams {
@@ -209,12 +212,15 @@ body {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  margin-bottom: 8px;       /* Pequeno espaçamento abaixo dos times */
 }
+
 
 .team-box {
   display: flex;
   align-items: center;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .team-flag {
@@ -224,8 +230,9 @@ body {
 }
 
 .poster-group {
-  margin-top: 10px;
-  padding: 6px 12px;
+  margin-top: 16px;          /* Aumenta o espaçamento acima do grupo */
+  flex-basis: 100%;          /* Força a quebra de linha para o grupo */
+  padding: 10px 12px;
   border-radius: 999px;
   background: rgba(246, 201, 0, 0.14);
   font-size: 0.8rem;
