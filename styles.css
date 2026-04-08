@@ -14,19 +14,56 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(180deg, #090909 0%, #0f0f0f 100%);
+  background-color: #090909;
   color: var(--text);
   font-family: Inter, system-ui, sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("background.png") center center / cover no-repeat fixed;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 12, 12, 0.65);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .poster-container {
   display: grid;
   grid-template-columns: 160px 1fr;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.poster-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.poster-side,
+.poster-content {
+  position: relative;
+  z-index: 1;
 }
 
 .poster-side {
-  background: var(--panel);
+  background: #111;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,14 +71,13 @@ body {
 }
 
 .poster-side-label {
-  font-size: 3.2rem;
-  font-weight: 800;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.05em;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #111;
+  color: #fff;
 }
 
 .poster-content {
@@ -251,7 +287,8 @@ body {
   }
 
   .poster-side {
-    padding: 16px;
+    padding: 16px 24px;
+    justify-content: flex-start;
   }
 
   .poster-side-label {

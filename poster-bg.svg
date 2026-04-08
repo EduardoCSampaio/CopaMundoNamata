@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d85c" stop-opacity="0.84" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.0" />
+    </linearGradient>
+  </defs>
+  <rect width="720" height="720" fill="transparent" />
+  <g opacity="0.24">
+    <path d="M160 130C210 90 320 50 380 110C430 160 460 240 420 290C380 340 320 330 280 290C250 260 210 180 160 130Z" fill="url(#leafGradient)" />
+    <path d="M520 90C590 120 650 190 630 260C610 330 540 370 480 360C430 350 390 310 380 260C370 220 400 150 520 90Z" fill="url(#leafGradient)" />
+    <path d="M120 500C160 460 220 410 290 420C360 430 400 490 390 550C380 610 320 650 260 640C200 630 140 560 120 500Z" fill="url(#leafGradient)" />
+    <path d="M550 520C620 500 680 440 700 360C720 280 680 210 620 190C560 170 520 200 490 250C460 300 470 360 520 400C560 430 560 520 550 520Z" fill="url(#leafGradient)" />
+  </g>
+</svg>
