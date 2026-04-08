@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendário Copa NAMATA - Estilo Poster</title>
+  <link rel="stylesheet" href="poster.css" />
+</head>
+<body>
+  <main class="poster-container">
+    <aside class="poster-side">
+      <span class="poster-side-label">NAMATA</span>
+    </aside>
+
+    <section class="poster-content">
+      <header class="poster-header">
+        <span class="eyebrow">Calendário NAMATA</span>
+        <h1>Jogos da Copa</h1>
+        <p>Comparação de estilo tipo poster para o calendário de jogos.</p>
+      </header>
+
+      <div class="filter-row">
+        <button id="teamSelectButton" type="button" class="team-select-button">
+          <span id="teamSelectLabel">Todas as seleções</span>
+          <span class="arrow">▾</span>
+        </button>
+        <div id="teamSelectMenu" class="team-select-menu hidden"></div>
+      </div>
+
+      <div id="posterSchedule" class="poster-schedule"></div>
+    </section>
+  </main>
+
+  <script src="poster.js"></script>
+</body>
+</html>
