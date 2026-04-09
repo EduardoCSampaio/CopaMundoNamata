@@ -1,4 +1,7 @@
 const posterGames = [
+  { date: 'Terça-feira, 02 de junho', time: '19:30', group: 'Final copa 1970', teamA: 'Brasil', teamB: 'Itália' },
+  { date: 'Quarta-feira, 03 de junho', time: '19:30', group: 'Final copa 1994', teamA: 'Brasil', teamB: 'Itália' },
+  { date: 'Quinta-feira, 04 de junho', time: '19:30', group: 'Final copa 2002', teamA: 'Brasil', teamB: 'Alemanha' },
   { date: 'Quinta-feira, 11 de junho', time: '16:00', group: 'Grupo A', teamA: 'México', teamB: 'África do Sul' },
   { date: 'Quinta-feira, 11 de junho', time: '23:00', group: 'Grupo A', teamA: 'República da Coreia', teamB: 'República Tcheca' },
   { date: 'Sexta-feira, 12 de junho', time: '16:00', group: 'Grupo B', teamA: 'Canadá', teamB: 'Bósnia e Herzegovina' },
@@ -87,7 +90,8 @@ const flags = {
   'Cabo Verde': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Cape_Verde.svg/1280px-Flag_of_Cape_Verde.svg.png',
   'Portugal': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/200px-Flag_of_Portugal.svg.png',
   'Jordânia': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/200px-Flag_of_Jordan.svg.png',
-  'Todas as seleções': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ3XzU6GjhS_nny6-RkCmjrV8NT0StN2h8cA&s'
+  'Todas as seleções': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ3XzU6GjhS_nny6-RkCmjrV8NT0StN2h8cA&s',
+  'Itália': 'https://img.freepik.com/fotos-premium/bandeira-italiana_469558-2021.jpg?semt=ais_hybrid&w=740&q=80'
 };
 
 const normalizedFlags = new Map(
