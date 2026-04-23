@@ -6,7 +6,7 @@ const posterGames = [
   { date: 'Sábado, 13 de junho', time: '16:00', group: 'Grupo B', teamA: 'Catar', teamB: 'Suíça' },
   { date: 'Sábado, 13 de junho', time: '19:00', group: 'Grupo C', teamA: 'Brasil', teamB: 'Marrocos' },
   { date: 'Sábado, 13 de junho', time: '22:00', group: 'Grupo C', teamA: 'Haiti', teamB: 'Escócia' },
-  { date: 'Domingo, 14 de junho', time: '14:00', group: 'Grupo E', teamA: 'Alemanha', teamB: 'Curaçau' },
+  { date: 'Domingo, 14 de junho', time: '14:00', group: 'Grupo E', teamA: 'Alemanha', teamB: 'Curaçao' },
   { date: 'Domingo, 14 de junho', time: '17:00', group: 'Grupo F', teamA: 'Holanda', teamB: 'Japão' },
   { date: 'Domingo, 14 de junho', time: '20:00', group: 'Grupo E', teamA: 'Costa do Marfim', teamB: 'Equador' },
   { date: 'Terça-feira, 16 de junho', time: '16:00', group: 'Grupo I', teamA: 'França', teamB: 'Senegal' },
@@ -23,7 +23,7 @@ const posterGames = [
   { date: 'Sexta-feira, 19 de junho', time: '21:30', group: 'Grupo C', teamA: 'Brasil', teamB: 'Haiti' },
   { date: 'Sábado, 20 de junho', time: '14:00', group: 'Grupo F', teamA: 'Holanda', teamB: 'Suécia' },
   { date: 'Sábado, 20 de junho', time: '17:00', group: 'Grupo E', teamA: 'Alemanha', teamB: 'Costa do Marfim' },
-  { date: 'Sábado, 20 de junho', time: '21:00', group: 'Grupo E', teamA: 'Equador', teamB: 'Curaçau' },
+  { date: 'Sábado, 20 de junho', time: '21:00', group: 'Grupo E', teamA: 'Equador', teamB: 'Curaçao' },
   { date: 'Sábado, 20 de junho', time: '23:00', group: 'Grupo F', teamA: 'Tunísia', teamB: 'Japão' },
   { date: 'Domingo, 21 de junho', time: '13:00', group: 'Grupo H', teamA: 'Espanha', teamB: 'Arábia Saudita' },
   { date: 'Domingo, 21 de junho', time: '16:00', group: 'Grupo G', teamA: 'Bélgica', teamB: 'Irã' },
@@ -78,7 +78,18 @@ const flagCodes = {
   'Gana': 'gh',
   'Panamá': 'pa',
   'Uzbequistão': 'uz',
-  'Colômbia': 'co'
+  'Colômbia': 'co',
+  'Austrália': 'au',
+  'Suécia': 'se',
+  'Tunísia': 'tn',
+  'Espanha': 'es',
+  'Arábia Saudita': 'sa',
+  'Bélgica': 'be',
+  'Irã': 'ir',
+  'Uruguai': 'uy',
+  'Cabo Verde': 'cv',
+  'Portugal': 'pt',
+  'Jordânia': 'jo'
 };
 
 function normalize(text) {
