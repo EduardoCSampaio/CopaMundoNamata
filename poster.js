@@ -46,11 +46,11 @@ const posterGames = [
 ];
 
 const flags = {
-  'México': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/200px-Flag_of_Mexico.svg.png',
-  'África do Sul': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/200px-Flag_of_South_Africa.svg.png',
+  'México': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/1280px-Flag_of_Mexico.svg.png',
+  'África do Sul': 'https://www.eccobandeiras.com.br/image/cache/catalog/antigas/Africa-1111x740.jpg',
   'República da Coreia': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/200px-Flag_of_South_Korea.svg.png',
-  'República Tcheca': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/200px-Flag_of_the_Czech_Republic.svg.png',
-  'Canadá': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Canada.svg/200px-Flag_of_Canada.svg.png',
+  'República Tcheca': 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_Czech_Republic.svg',
+  'Canadá': 'https://static.significados.com.br/foto/bandeira-do-canada-significados.jpg?width=1024',
   'Bósnia e Herzegovina': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/200px-Flag_of_Bosnia_and_Herzegovina.svg.png',
   'Estados Unidos': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/200px-Flag_of_the_United_States.svg.png',
   'Paraguai': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Paraguay.svg/200px-Flag_of_Paraguay.svg.png',
@@ -60,7 +60,7 @@ const flags = {
   'Marrocos': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/200px-Flag_of_Morocco.svg.png',
   'Haiti': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Flag_of_Haiti.svg/200px-Flag_of_Haiti.svg.png',
   'Escócia': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/200px-Flag_of_Scotland.svg.png',
-  'Alemanha': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/200px-Flag_of_Germany.svg.png',
+  'Alemanha': 'https://img.freepik.com/fotos-premium/bandeira-alema-da-alemanha_469558-1776.jpg?semt=ais_hybrid&w=740&q=80',
   'Curaçao': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Flag_of_Cura%C3%A7ao.svg/330px-Flag_of_Cura%C3%A7ao.svg.png',
   'Holanda': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/200px-Flag_of_the_Netherlands.svg.png',
   'Japão': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/200px-Flag_of_Japan.svg.png',
