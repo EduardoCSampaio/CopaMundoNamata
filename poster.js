@@ -59,24 +59,42 @@ const flagCodes = {
   'Colômbia': 'co'
 };
 
+function normalize(text) {
+  return text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+}
+
 function getFlagUrl(team) {
-  const code = flagCodes[team];
-  return code
-    ? `https://flagcdn.com/w40/${code}.png`
+  return flagCodes[team]
+    ? `https://flagcdn.com/w40/${flagCodes[team]}.png`
     : 'https://via.placeholder.com/35x24?text=?';
 }
 
 /* =========================
-   📊 RENDER
+   STATE
 ========================= */
-const posterSchedule = document.getElementById('posterSchedule');
+let selectedTeam = '';
 
+const posterSchedule = document.getElementById('posterSchedule');
+const teamSelectButton = document.getElementById('teamSelectButton');
+const teamSelectMenu = document.getElementById('teamSelectMenu');
+const teamSelectLabel = document.getElementById('teamSelectLabel');
+
+const teams = [...new Set(
+  posterGames.flatMap(g => [g.teamA, g.teamB])
+)].sort((a, b) => a.localeCompare(b, 'pt-BR'));
+
+/* =========================
+   RENDER
+========================= */
 function renderPosterSchedule(filterTeam = '') {
   posterSchedule.innerHTML = '';
 
-  const filtered = posterGames.filter(game =>
-    !filterTeam || game.teamA === filterTeam || game.teamB === filterTeam
-  );
+  const filtered = !filterTeam
+    ? posterGames
+    : posterGames.filter(g =>
+        normalize(g.teamA) === normalize(filterTeam) ||
+        normalize(g.teamB) === normalize(filterTeam)
+      );
 
   const grouped = filtered.reduce((acc, game) => {
     (acc[game.date] ||= []).push(game);
@@ -128,4 +146,58 @@ function renderPosterSchedule(filterTeam = '') {
   });
 }
 
+/* =========================
+   MENU
+========================= */
+function buildTeamSelectMenu() {
+  teamSelectMenu.innerHTML = '';
+
+  const all = document.createElement('div');
+  all.className = 'team-option' + (selectedTeam === '' ? ' active' : '');
+  all.innerHTML = '🌍 Todas as seleções';
+  all.onclick = () => selectTeam('');
+  teamSelectMenu.appendChild(all);
+
+  teams.forEach(team => {
+    const item = document.createElement('div');
+    item.className = 'team-option' + (selectedTeam === team ? ' active' : '');
+
+    item.innerHTML = `
+      <img src="${getFlagUrl(team)}">
+      <span>${team}</span>
+    `;
+
+    item.onclick = () => selectTeam(team);
+    teamSelectMenu.appendChild(item);
+  });
+}
+
+function selectTeam(team) {
+  selectedTeam = team;
+  teamSelectLabel.textContent = team || 'Todas as seleções';
+
+  renderPosterSchedule(team);
+  teamSelectMenu.classList.add('hidden');
+
+  buildTeamSelectMenu();
+}
+
+/* =========================
+   EVENTS
+========================= */
+teamSelectButton.addEventListener('click', () => {
+  teamSelectMenu.classList.toggle('hidden');
+});
+
+document.addEventListener('click', e => {
+  if (!teamSelectButton.contains(e.target) &&
+      !teamSelectMenu.contains(e.target)) {
+    teamSelectMenu.classList.add('hidden');
+  }
+});
+
+/* =========================
+   INIT
+========================= */
+buildTeamSelectMenu();
 renderPosterSchedule();
