@@ -53,7 +53,7 @@ const flags = {
   'Paraguai': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Paraguay.svg/200px-Flag_of_Paraguay.svg.png',
   'Catar': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/200px-Flag_of_Qatar.svg.png',
   'Suíça': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/200px-Flag_of_Switzerland.svg.png',
-  'Brasil': 'https://static.todamateria.com.br/upload/ba/nd/bandeira-do-brasil-og.jpg?class=ogImageWide',
+  'Brasil': 'https://conhecimentocientifico.r7.com/wp-content/uploads/2019/08/bandeira-do-brasil-e-seus-significados-e1566578436810.png',
   'Marrocos': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/200px-Flag_of_Morocco.svg.png',
   'Haiti': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Flag_of_Haiti.svg/200px-Flag_of_Haiti.svg.png',
   'Escócia': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/200px-Flag_of_Scotland.svg.png',
