@@ -48,7 +48,7 @@ const posterGames = [
 const flags = {
   'México': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/1280px-Flag_of_Mexico.svg.png',
   'África do Sul': 'https://www.eccobandeiras.com.br/image/cache/catalog/antigas/Africa-1111x740.jpg',
-  'República da Coreia': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/200px-Flag_of_South_Korea.svg.png',
+  'República da Coreia': 'https://flagcdn.com/w256/kr.png',
   'República Tcheca': 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_Czech_Republic.svg',
   'Canadá': 'https://static.significados.com.br/foto/bandeira-do-canada-significados.jpg?width=1024',
   'Bósnia e Herzegovina': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/200px-Flag_of_Bosnia_and_Herzegovina.svg.png',
