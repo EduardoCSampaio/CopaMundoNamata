@@ -21,53 +21,41 @@ const posterGames = [
 ];
 
 /* =========================
-   🌍 FLAGS (100% estável)
+   🏳️ FLAGS (ESTÁVEL)
 ========================= */
-const flags = {
-  'Brasil': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/br.png',
-  'Itália': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/it.png',
-  'México': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/mx.png',
-  'África do Sul': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/za.png',
-  'República da Coreia': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/kr.png',
-  'República Tcheca': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/cz.png',
-  'Canadá': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ca.png',
-  'Bósnia e Herzegovina': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ba.png',
-  'Estados Unidos': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/us.png',
-  'Paraguai': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/py.png',
-  'Catar': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/qa.png',
-  'Suíça': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ch.png',
-  'Marrocos': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ma.png',
-  'Haiti': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ht.png',
-  'Escócia': 'https://raw.githubusercontent.com/hampusborgos/country-flags/main/png100px/gb-sct.png',
-  'Alemanha': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/de.png',
-  'Curaçao': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/cw.png',
-  'Holanda': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/nl.png',
-  'Japão': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/jp.png',
-  'Costa do Marfim': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ci.png',
-  'Equador': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ec.png',
-  'França': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/fr.png',
-  'Senegal': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/sn.png',
-  'Iraque': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/iq.png',
-  'Noruega': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/no.png',
-  'Argentina': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ar.png',
-  'Argélia': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/dz.png',
-  'Inglaterra': 'https://raw.githubusercontent.com/hampusborgos/country-flags/main/png100px/gb-eng.png',
-  'Croácia': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/hr.png',
-  'Gana': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/gh.png',
-  'Panamá': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/pa.png',
-  'Uzbequistão': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/uz.png',
-  'Colômbia': 'https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/co.png'
+const flagCodes = {
+  'Brasil': 'br',
+  'Itália': 'it',
+  'México': 'mx',
+  'África do Sul': 'za',
+  'República da Coreia': 'kr',
+  'República Tcheca': 'cz',
+  'Canadá': 'ca',
+  'Bósnia e Herzegovina': 'ba',
+  'Estados Unidos': 'us',
+  'Paraguai': 'py',
+  'Catar': 'qa',
+  'Suíça': 'ch',
+  'Marrocos': 'ma',
+  'Haiti': 'ht',
+  'Escócia': 'gb-sct',
+  'Alemanha': 'de',
+  'Curaçao': 'cw',
+  'Holanda': 'nl',
+  'Japão': 'jp',
+  'Costa do Marfim': 'ci',
+  'Equador': 'ec'
 };
 
-/* =========================
-   🧠 FUNÇÃO SIMPLES (SEM MAP)
-========================= */
 function getFlagUrl(team) {
-  return flags[team] || 'https://via.placeholder.com/35x24?text=?';
+  const code = flagCodes[team];
+  return code
+    ? `https://flagcdn.com/w40/${code}.png`
+    : 'https://via.placeholder.com/35x24?text=?';
 }
 
 /* =========================
-   🎯 RENDER
+   📊 RENDER
 ========================= */
 const posterSchedule = document.getElementById('posterSchedule');
 
@@ -75,9 +63,7 @@ function renderPosterSchedule(filterTeam = '') {
   posterSchedule.innerHTML = '';
 
   const filtered = posterGames.filter(game =>
-    !filterTeam ||
-    game.teamA === filterTeam ||
-    game.teamB === filterTeam
+    !filterTeam || game.teamA === filterTeam || game.teamB === filterTeam
   );
 
   const grouped = filtered.reduce((acc, game) => {
@@ -89,7 +75,11 @@ function renderPosterSchedule(filterTeam = '') {
     const block = document.createElement('div');
     block.className = 'poster-category';
 
-    block.innerHTML = `<div class="poster-category-header"><h2>${date}</h2></div>`;
+    block.innerHTML = `
+      <div class="poster-category-header">
+        <h2>${date}</h2>
+      </div>
+    `;
 
     const container = document.createElement('div');
     container.className = 'poster-events';
