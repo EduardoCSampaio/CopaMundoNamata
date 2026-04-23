@@ -45,6 +45,18 @@ const flagCodes = {
   'Japão': 'jp',
   'Costa do Marfim': 'ci',
   'Equador': 'ec'
+  'França': 'fr',
+  'Senegal': 'sn',
+  'Iraque': 'iq',
+  'Noruega': 'no',
+  'Argentina': 'ar',
+  'Argélia': 'dz',
+  'Inglaterra': 'gb-eng',
+  'Croácia': 'hr',
+  'Gana': 'gh',
+  'Panamá': 'pa',
+  'Uzbequistão': 'uz',
+  'Colômbia': 'co'
 };
 
 function getFlagUrl(team) {
