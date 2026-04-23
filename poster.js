@@ -44,7 +44,7 @@ const flagCodes = {
   'Holanda': 'nl',
   'Japão': 'jp',
   'Costa do Marfim': 'ci',
-  'Equador': 'ec'
+  'Equador': 'ec',
   'França': 'fr',
   'Senegal': 'sn',
   'Iraque': 'iq',
